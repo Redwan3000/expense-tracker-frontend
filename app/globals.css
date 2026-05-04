@@ -26,26 +26,16 @@ body {
 
 .sidebar-button {
     @apply
-    bg-indigo-200/60
-    text-[18px]
-    text-black
+    text-[16px]
+    text-black/70
     flex
-    border
-    border-white/60
-    rounded-sm
-    gap-1
+    p-2
     w-full
-    p-1
-    backdrop-blur-md
+
     transition-all
     duration-100
     ease-in-out
-    shadow-sm
+    hover:text-emerald-600
+    hover:fill-emerald-600
 
-    hover:-translate-y-1
-    hover:bg-slate-100/90
-    hover:border-white
-    hover:shadow-xl
-    hover:shadow-indigo-500/20
 }
-

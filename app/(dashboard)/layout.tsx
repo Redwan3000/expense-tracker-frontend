@@ -16,14 +16,14 @@ export default function RootLayout({
     return (
 
 
-        <div className={"flex justify-center items-center h-screen w-full bg-white p-4"}>
-            <div className={"flex bg-linear-to-br from-[#e2e8f0] to-[#cbd5e1] backdrop-blur-xl border-white rounded-xl shadow-2xl h-full w-full p-4"}>
+
+            <div className={"flex bg-white shadow-md h-full w-full p-3"}>
                     <Sidebar/>
-                    <div className="w-4/5 flex-1  h-full bg-transparent overflow-y-auto p-6  min-h-full border-none">
+                    <div className=" flex-1  h-full bg-transparent pl-3 overflow-y-auto min-h-full border-none">
                         {children}
                     </div>
                 </div>
-            </div>
+
 
     );
 }
