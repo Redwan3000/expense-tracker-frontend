@@ -10,11 +10,11 @@ export const Sidebar = () => {
     return (
 
         <div
-            className="min-h-full w-1/6 p-3 bg-[#F2F2F2] backdrop-blur-md shadow-sm border-r border-white/40 flex  flex-col   rounded-xl">
+            className="min-h-full w-1/6 p-3 bg-[#DEDDCB] backdrop-blur-md shadow-sm border-r border-white/40 flex  flex-col   rounded-xl">
 
             <div className={"flex justify-start items-center mb-5 min-w-full "}>
-                <Image src={"/sidebarIcons/main_logo.png"} width={50} height={50} alt={"main logo"}></Image> <h1
-                className={"text-black font-semibold font-serif text-[26px] text-emerald-950"}>Haltrack</h1>
+                <Image src={"/sidebarIcons/main_logo.png"} width={50} height={50} alt={"main logo"} className={"animate-pulse"}></Image> <h1
+                className={"font-semibold font-serif text-[26px] text-emerald-950"}>Haltrack</h1>
             </div>
             <div className={"p-1"}>
 

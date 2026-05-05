@@ -1,6 +1,5 @@
 import type {Metadata} from "next";
 import "../globals.css";
-import {AuthImageSlider} from "@/components/AuthImageSlider";
 
 
 export const metadata: Metadata = {
@@ -15,14 +14,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-
-
         <div className="flex justify-center items-center h-screen w-screen  bg-white p-20">
             <div className={"flex h-full justify-center items-center w-[90%] bg-[#F2F2F2] rounded-sm"}>
                 {children}
             </div>
         </div>
-
 
     );
 }

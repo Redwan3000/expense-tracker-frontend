@@ -3,7 +3,7 @@ export default function Reports() {
     return (
 
         <main className={"h-full flex flex-col w-full"}>
-            <div className={"min-w-full w-full h-16 mb-3 bg-[#F2F2F2] rounded-3xl"} >
+            <div className={"min-w-full w-full h-20 mb-3 bg-[#F2F2F2] rounded-3xl"} >
 
 
             </div>

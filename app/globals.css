@@ -39,3 +39,10 @@ body {
     hover:fill-emerald-600
 
 }
+
+
+.reg-input-box {
+    @apply
+    bg-[#F2f2f2] pl-3 rounded-sm shadow-sm backdrop-blur-sm border-2 border-white/60
+
+}
