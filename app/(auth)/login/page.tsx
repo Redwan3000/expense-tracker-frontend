@@ -2,13 +2,51 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {useState} from "react";
+import React, {useState} from "react";
 import {OpenEye} from "@/components/OpenEye";
 import {ClosedEye} from "@/components/ClosedEye";
+import {useRouter} from "next/navigation";
+import {toast} from "sonner";
 
 export default function Login() {
 
+    const router = useRouter();
     const [eyeicon, setEyeIcon] = useState(false);
+    const [loginForm, setLoginForm] = useState({
+        username: "",
+        password: "",
+    })
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        try {
+            const res = await fetch("http://localhost:8080/auth/login", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    username: loginForm.username,
+                    password: loginForm.password,
+                })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                toast.error(data.message ?? "Login failed")
+                return
+            }
+
+            localStorage.setItem("token", data.result.jwt);
+            localStorage.setItem("userId", data.result.userId);
+
+            toast.success("Logged in Successfully ,, Welcome Back")
+            router.push("/dashboard");
+        } catch (error) {
+            toast.error("server not found")
+        }
+
+    };
 
     return (
 
@@ -39,11 +77,15 @@ export default function Login() {
                         </div>
 
 
-                        <form>
+                        <form onSubmit={handleSubmit}>
 
                             <div className={"w-full relative text-[#BB9668] hover:text-[#33450E] "}>
 
-                                <input type={"text"} placeholder="username"
+                                <input type={"text"}
+                                       placeholder="username"
+                                       name={"username"}
+                                       value={loginForm.username}
+                                       onChange={(e) => setLoginForm({...loginForm, username: e.target.value})}
                                        className={"bg-[#F2f2f2] p-2.5 rounded-xl w-full mb-3  text-[#BB9668] pl-8 border-2 border-white/60 hover:text-[#33450E]"}/>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -57,7 +99,10 @@ export default function Login() {
 
 
                             <div className={"w-full relative text-[#BB9668] hover:text-[#33450E]"}>
-                                <input type={`${eyeicon ? "text" : "password"}`} placeholder={"password"}
+                                <input type={`${eyeicon ? "text" : "password"}`}
+                                       placeholder={"password"}
+                                       value={loginForm.password}
+                                       onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
                                        className={"bg-[#F2f2f2]  p-2.5 rounded-xl w-full mb-2 text-[#BB9668] pl-8 border-2 border-white/60 hover:text-[#33450E]"}/>
 
                                 {/*lock*/}
@@ -76,14 +121,16 @@ export default function Login() {
                             </div>
 
 
-                            <Link href={"/forgot"}
+                            <Link href={"/dashboard"}
                                   className={"flex justify-end mb-2 text-[#BB9668] text-[14px] underline hover:text-[#33450E]"}>Forgot
                                 Password?</Link>
 
 
-                            <Link href={"/dashboard"}
-                                  className={"bg-[#33450E] flex justify-center p-2.5  font-extrabold rounded-xl w-full mb-3  text-[#BB9668]  border-2 border-white/60 hover:animate-pulse hover:shadow-md hover:shadow-[#33450E] hover:-translate-y-1"}>Login</Link>
+                            <button type={"submit"}
+                                    className={"bg-[#33450E] flex justify-center p-2.5  font-extrabold rounded-xl w-full mb-3  text-[#BB9668]  border-2 border-white/60 hover:animate-pulse hover:shadow-md hover:shadow-[#33450E] hover:-translate-y-1"}>
+                                Login
 
+                            </button>
 
                             <p className={"w-full flex justify-center  text-[#BB9668] "}>-------------------------Or-------------------------</p>
 

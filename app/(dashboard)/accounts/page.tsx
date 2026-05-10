@@ -89,7 +89,6 @@ export default async function Accounts({searchParams}: { searchParams: Promise<{
                                             </button>
                                         </TableCell>
                                     </TableRow>
-
                                 )
                             )
                             }
