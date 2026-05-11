@@ -63,7 +63,7 @@ export default function Login() {
             <div className={"h-full w-1/2 justify-center items-center bg-[#F2f2f2] rounded-sm rounded-l-xl flex "}>
                 <div className={" flex flex-col justify-center items-center h-3/4 w-1/2  bg-[#DBD9BC] rounded-xl p-4"}>
 
-                    <div className={" h-full w-full p-2"}>
+                    <div className={" h-full w-full p-2 "}>
 
                         <div
                             className={"text-[#BB9668] hover:text-[#33450E] hover:underline justify-end self-end items-end flex w-full p-1 mb-5 text-[16px] font-serif hover:font-semibold"}>

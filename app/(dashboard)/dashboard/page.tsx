@@ -8,6 +8,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import {AddTransaction} from "@/components/AddTransaction";
+import {Testing} from "@/components/testing";
 
 export default function Dashboard() {
     return (
@@ -18,6 +19,7 @@ export default function Dashboard() {
 <div>welcome user</div>
 
                <div><AddTransaction /></div>
+               <div><Testing /></div>
            </div>
 
             <div className={"min-w-full w-full flex  justify-between"} >

@@ -20,89 +20,94 @@ import {Card} from "@/components/ui/card";
 
 export const AddTransaction = () => {
     return (
-        <div className={"bg-green-200 rounded-md flex justify-center"}><Dialog>
+        <div className={"bg-green-200 rounded-md flex justify-center"}>
+            <Dialog>
             <DialogTrigger className={"p-2 px-4"}>Add Transaction</DialogTrigger>
-            <DialogContent className={"bg-[#DBD9BC]  p-4 w-1/2 flex flex-col justify-center rounded-xl"}>
+            <DialogContent className={"bg-[#DBD9BC]  size-auto flex  flex-col justify-center rounded-xl"}>
                 <DialogHeader>
                     <DialogTitle className={"flex justify-center mb-4"}>Add Transaction</DialogTitle>
-                    <DialogDescription className={"p-3"}>
+                    <DialogDescription>
 
-                        <form>
-                            <div className={"flex "}>
-                                <div className={" flex flex-col gap-2"}>
-                                    <Input type={"number"} placeholder={"UserId"}/>
-                                    <Select>
-                                        <SelectTrigger className="w-[180px]">
-                                            <SelectValue placeholder="Category" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectGroup>
-                                                <SelectItem value="light">Food</SelectItem>
-                                                <SelectItem value="dark">Cloth</SelectItem>
-                                                <SelectItem value="Util">Util</SelectItem>
-                                                <SelectItem value="Medicine">Medicine</SelectItem>
-                                                <SelectItem value="Travel">Travel</SelectItem>
-                                                <SelectItem value="Shopping">Shopping</SelectItem>
-                                                <SelectItem value="Others">Others</SelectItem>
-                                            </SelectGroup>
-                                        </SelectContent>
-                                    </Select>
-                                    <Input type={"text"} placeholder={"Item"}/>
-                                    <Input type={"text"} placeholder={"Description"}/>
-
-                                    <Select>
-                                        <SelectTrigger className="w-[180px]">
-                                            <SelectValue placeholder="Transaction Type" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectGroup>
-                                                <SelectItem value="light">Expense</SelectItem>
-                                                <SelectItem value="dark">Income</SelectItem>
-                                                <SelectItem value="system">Transfer</SelectItem>
-                                            </SelectGroup>
-                                        </SelectContent>
-                                    </Select>
-
-                                    <Select>
-                                        <SelectTrigger className="w-[180px]">
-                                            <SelectValue placeholder="Transaction Method" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectGroup>
-                                                <SelectItem value="light">Bank</SelectItem>
-                                                <SelectItem value="dark">MFS</SelectItem>
-                                                <SelectItem value="system">Cash</SelectItem>
-                                            </SelectGroup>
-                                        </SelectContent>
-                                    </Select>
-                                <Select>
-                                    <SelectTrigger className="w-[180px]">
-                                        <SelectValue placeholder="Account" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectGroup>
-                                            <SelectItem value="light">Account1</SelectItem>
-                                            <SelectItem value="dark">Account2</SelectItem>
-                                            <SelectItem value="system">Account3</SelectItem>
-                                        </SelectGroup>
-                                    </SelectContent>
-                                </Select>
-                                    <Input type={"number"} placeholder={"Amount"}/>
-                                    <Input type={"date"} placeholder={"date"}/>
-
-                                </div>
-
-                                <div className={"flex items-center justify-center h-fit mx-4 bg-yellow-50 w-full"}>
-                                    <Card className={"p-4"}>add recipt</Card>
-                                </div>
-                            </div>
-
-                            <div className={"flex justify-center items-center mt-2 "}>
-                                <button> Submit </button>
-                            </div>
-                        </form>
                     </DialogDescription>
                 </DialogHeader>
+
+
+                <form className={"grid grid-cols-1 md:grid-cols-2 gap-6"}>
+
+                    <div className={" flex flex-col gap-x-10 justify-center  rounded-md  py-6 mx-12bg-black"}>
+                        <Input type={"number"}  placeholder={"UserId"}/>
+                        <Select>
+                            <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Category" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectItem value="1">Food</SelectItem>
+                                    <SelectItem value="2">Cloth</SelectItem>
+                                    <SelectItem value="3">Util</SelectItem>
+                                    <SelectItem value="4">Medicine</SelectItem>
+                                    <SelectItem value="5">Travel</SelectItem>
+                                    <SelectItem value="6">Shopping</SelectItem>
+                                    <SelectItem value="7">Others</SelectItem>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                        <Input type={"text"} className={"w-full"} placeholder={"Item"}/>
+                        <Input type={"text"} className={"w-full"} placeholder={"Description"}/>
+                        <Select>
+                            <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Transaction Type" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectItem value="light">Expense</SelectItem>
+                                    <SelectItem value="dark">Income</SelectItem>
+                                    <SelectItem value="system">Transfer</SelectItem>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+
+                        <Select>
+                            <SelectTrigger className={"w-full"}>
+                                <SelectValue placeholder="Transaction Method" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectItem value="light">Bank</SelectItem>
+                                    <SelectItem value="dark">MFS</SelectItem>
+                                    <SelectItem value="system">Cash</SelectItem>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                        <Select>
+                            <SelectTrigger className={"w-full"}>
+                                <SelectValue placeholder="Account" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectItem value="light">Account1</SelectItem>
+                                    <SelectItem value="dark">Account2</SelectItem>
+                                    <SelectItem value="system">Account3</SelectItem>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+                        <Input type={"number"} className={"w-full"} placeholder={"Amount"}/>
+                        <Input type={"date"} className={"w-full"} placeholder={"date"}/>
+                    </div>
+
+
+
+                    <div className={"flex flex-col items-center justify-center w-full  bg-yellow-50"}>
+                        <Card className={"p-4"}>add recipt</Card>
+                    </div>
+
+
+                    <div className={"col-span-2 flex bg-purple-500 justify-center items-center mt-4"}>
+                        <button className={"p-2"}> Submit </button>
+                    </div>
+                </form>
+
+
             </DialogContent>
         </Dialog></div>
     )
