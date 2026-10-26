@@ -24,6 +24,10 @@ import {Account} from "@/types/account";
 
 export default async function Accounts({searchParams}: { searchParams: Promise<{ page?: string }> }) {
 
+
+
+
+    
     const accountsList = Dummy_Accounts;
     const accountPerPage = 12
 

@@ -110,11 +110,10 @@ export const Sidebar = () => {
                     </Link>
 
 
-                    {/*<Link href={"/login"}*/}
-                    {/*      className={"bg-indigo-200/60 text-[18px] text-black  flex  border border-white/60 p-1 rounded-sm w-full backdrop-blur-md transition-all  duration-100 ease-in-out shadow-sm\n" +*/}
-                    {/*          "    hover:-translate-x-1 hover:bg-red-600/60  hover:border-white  hover:shadow-xl  hover:shadow-red-500/20 justify-center items-center hover:animate-bounce"}>*/}
-                    {/*    Logout*/}
-                    {/*</Link>*/}
+                    <Link href={"/login"}
+                         className={"bg-indigo-200/60 text-[18px] text-black  flex  border border-white/60 p-1 rounded-sm w-full backdrop-blur-md transition-all  duration-100 ease-in-out shadow-sm\"    hover:-translate-x-1 hover:bg-red-600/60  hover:border-white  hover:shadow-xl  hover:shadow-red-500/20 justify-center items-center hover:animate-bounce"}>
+                       Logout
+                    </Link>
                 </div>
 
             </div>
